@@ -13,7 +13,6 @@ public class LoginTests extends BaseTest {
     private static final String WRONG_USERNAME = "wrongUser";
     private static final String WRONG_PASSWORD = "wrongPass";
     private static final String OVER_MAX_LENGTH  = "a".repeat(51);
-
     private static final String CONTAINS_ERROR_MSG   = "Введены неверные данные";
     private static final String CONTAINS_SUCCESS_MSG = "выполнен";
 
@@ -58,8 +57,6 @@ public class LoginTests extends BaseTest {
         System.out.println("\n=== testLoginWithWrongCredentials: неверные данные ===");
         LoginSteps loginSteps = new LoginSteps(driver);
         loginSteps.stepLogin(WRONG_USERNAME, WRONG_PASSWORD);
-
-        // TODO: баг приложения — tvError появляется, но текст пустой при неверных данных
         Assert.assertTrue(loginSteps.stepIsErrorDisplayed(),
                 "Должно отображаться сообщение об ошибке при неверных данных");
     }
@@ -69,11 +66,9 @@ public class LoginTests extends BaseTest {
     public void testLoginWithUsernameExceedingMaxLength() {
         System.out.println("\n=== testLoginWithUsernameExceedingMaxLength: логин > 50 символов ===");
         LoginSteps loginSteps = new LoginSteps(driver);
-
         loginSteps.stepEnterUsername(OVER_MAX_LENGTH);
         loginSteps.stepEnterPassword(VALID_PASSWORD);
         loginSteps.stepClickConfirmButton();
-
         Assert.assertTrue(loginSteps.stepIsErrorDisplayed(),
                 "Ошибка должна отображаться при логине длиннее 50 символов");
     }
