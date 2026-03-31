@@ -17,10 +17,6 @@ public class LoginTests extends BaseTest {
     private static final String CONTAINS_ERROR_MSG   = "Введены неверные данные";
     private static final String CONTAINS_SUCCESS_MSG = "выполнен";
 
-    // =========================================================================
-    // Тест 1: Успешная авторизация
-    // Локаторы: XPath (etUsername), UIAutomator (etPassword, btnConfirm)
-    // =========================================================================
 
     @Test(description = "Успешный вход с корректными логином и паролем")
     public void testSuccessfulLogin() {
@@ -34,10 +30,6 @@ public class LoginTests extends BaseTest {
                 "Текст главного экрана должен содержать: " + CONTAINS_SUCCESS_MSG);
     }
 
-    // =========================================================================
-    // Тест 2: Попытка входа с пустым полем логина
-    // Локаторы: UIAutomator (etPassword, btnConfirm), XPath (tvError)
-    // =========================================================================
 
     @Test(description = "Вход с пустым полем логина — должна появиться ошибка")
     public void testLoginWithEmptyUsername() {
@@ -49,10 +41,6 @@ public class LoginTests extends BaseTest {
                 "Должно отображаться сообщение об ошибке при пустом поле логина");
     }
 
-    // =========================================================================
-    // Тест 3: Попытка входа с пустым полем пароля
-    // Локаторы: XPath (etUsername, tvError), UIAutomator (btnConfirm)
-    // =========================================================================
 
     @Test(description = "Вход с пустым полем пароля — должна появиться ошибка")
     public void testLoginWithEmptyPassword() {
@@ -64,10 +52,6 @@ public class LoginTests extends BaseTest {
                 "Должно отображаться сообщение об ошибке при пустом поле пароля");
     }
 
-    // =========================================================================
-    // Тест 4: Попытка входа с неверными данными
-    // Локаторы: XPath (etUsername), UIAutomator (etPassword, btnConfirm)
-    // =========================================================================
 
     @Test(description = "Вход с неверными данными — должна появиться ошибка")
     public void testLoginWithWrongCredentials() {
@@ -80,10 +64,6 @@ public class LoginTests extends BaseTest {
                 "Должно отображаться сообщение об ошибке при неверных данных");
     }
 
-    // =========================================================================
-    // Тест 5: Логин длиннее допустимого максимума (50 символов)
-    // Локаторы: XPath (etUsername, tvTitle, tvError), UIAutomator (etPassword, btnConfirm)
-    // =========================================================================
 
     @Test(description = "Вход с логином > 50 символов — должна появиться ошибка валидации")
     public void testLoginWithUsernameExceedingMaxLength() {

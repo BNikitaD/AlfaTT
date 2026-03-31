@@ -3,9 +3,6 @@ package steps;
 import io.appium.java_client.android.AndroidDriver;
 import pages.MainPage;
 
-/**
- * Слой шагов для главного экрана (после успешного входа).
- */
 public class MainSteps {
 
     private final MainPage mainPage;
