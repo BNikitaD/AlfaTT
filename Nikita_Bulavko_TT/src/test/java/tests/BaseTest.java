@@ -8,7 +8,7 @@ public abstract class BaseTest {
 
     private static final String APP_PACKAGE = "com.alfabank.qapp";
 
-    protected AndroidDriver driver;
+    public AndroidDriver driver;
 
     @BeforeMethod
     public void setUp() throws Exception {
