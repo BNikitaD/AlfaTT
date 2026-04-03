@@ -37,10 +37,4 @@ public class LoginSteps {
         System.out.println("Ждём сообщение об ошибке");
         return loginPage.isErrorDisplayed();
     }
-
-    public boolean stepIsErrorContains(String text) {
-        return loginPage.getErrorText().trim().contains(text);
-    }
-
-
 }
