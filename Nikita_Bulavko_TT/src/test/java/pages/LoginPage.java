@@ -42,9 +42,4 @@ public class LoginPage extends BasePage {
     public boolean isErrorDisplayed() {
         return waitForNonEmptyText(ERROR_TEXT_XPATH);
     }
-
-    public boolean isErrorTextContains(String text) {
-        return getErrorText().trim().contains(text);
-    }
-
 }
