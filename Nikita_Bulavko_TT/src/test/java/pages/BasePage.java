@@ -26,9 +26,8 @@ public abstract class BasePage {
         return wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
 
-    public void clearAndType(By locator, String text) {
+    public void Type(By locator, String text) {
         WebElement element = waitForVisible(locator);
-        element.clear();
         element.sendKeys(text);
     }
 

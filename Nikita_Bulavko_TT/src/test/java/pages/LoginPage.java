@@ -18,11 +18,11 @@ public class LoginPage extends BasePage {
     }
 
     public void enterUsername(String username) {
-        clearAndType(USERNAME_FIELD_XPATH, username);
+        Type(USERNAME_FIELD_XPATH, username);
     }
 
     public void enterPassword(String password) {
-        clearAndType(PASSWORD_FIELD_CSS, password);
+        Type(PASSWORD_FIELD_CSS, password);
     }
 
     public void clickConfirmButton() {
