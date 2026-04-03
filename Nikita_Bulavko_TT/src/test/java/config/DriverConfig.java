@@ -23,8 +23,6 @@ public class DriverConfig {
         options.setAppPackage(APP_PACKAGE);
         options.setAppActivity(APP_ACTIVITY);
         options.setNoReset(true);
-        options.setAutoGrantPermissions(true);
-
         AndroidDriver driver = new AndroidDriver(new URL(APPIUM_SERVER_URL), options);
         driver.manage().timeouts().implicitlyWait(IMPLICIT_WAIT);
         return driver;
